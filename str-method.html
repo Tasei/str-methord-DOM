@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	window.onload = function (argument) {
+		var str = "          shang hai qing yi ke ji            ";
+		var str1 = str.trim();//去除字符串前后空格
+		console.log(str);
+		console.log(str1);
+
+		var reg = /[\s]/g;
+		var str2 = str.replace(reg,"");//去除字符串中所有空格
+		console.log(str2);
+
+		var strArr = str1.split(" ");
+		console.log(strArr);
+
+		var result = '';
+		for(var i in strArr){
+			result += strArr[i].substring(0,1).toUpperCase()+strArr[i].substring(1)+' ';//首字母大写
+		}
+
+		console.log(result);
+		//createElement("Tagname")
+
+		var list = document.getElementsByClassName('ul');
+		console.log(list);
+		var li = document.createElement("li"); //创建一个li标签
+		li.innerHTML = "是的我很好！";
+		li.setAttribute("id","Oli");//设置元素属性
+		list[0].appendChild(li);//插入元素
+		var p = document.createElement("p");
+		p.innerHTML = "你好吗？"
+		li.insertBefore(p,li.childNodes[0]);
+	}
+</script>
+<body>
+	<ul class="ul">
+	</ul>
+</body>
+</html>
